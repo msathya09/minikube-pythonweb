@@ -1,0 +1,14 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pythonweb-pod
+  labels:
+    app: pythonweb
+spec:
+  containers:
+  - name: pythonweb-container
+    image: python/flask-web:v1 
+    ports:
+        - containerPort: 8080
+
