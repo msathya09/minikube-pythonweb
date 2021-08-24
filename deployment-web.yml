@@ -1,0 +1,22 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: python-web-deployment
+  labels:
+    app: pythonweb
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: pythonweb
+  template:
+    metadata:
+      labels:
+        app: pythonweb
+    spec:
+      containers:
+      - name:  pythonweb-pod
+        image: python/flask-web:v2
+        ports:
+        - containerPort: 8090
